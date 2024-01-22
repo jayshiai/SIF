@@ -8,7 +8,6 @@ import axios from 'axios';
 import Bowser from "bowser";
 
 const page = () => {
-    const iframeRef = useRef(null);
     let stopfn;
 
     let userEventData = {
@@ -126,25 +125,22 @@ const page = () => {
 
 
     useEffect(() => {
-        const iframe = iframeRef.current;
-
-        if (iframe) {
 
 
-            stopfn = record(
-                {
-                    emit(event) {
-                        // push event into the events array
-                        userEventData.events.push(event);
-                    },
-                }
-            );
+        stopfn = record(
+            {
+                emit(event) {
+                    // push event into the events array
+                    userEventData.events.push(event);
+                },
+            }
+        );
 
 
-            return () => {
-                stopfn()
-            };
-        }
+        return () => {
+            stopfn()
+        };
+
     }, []);
 
     const successCallback = (position) => {
@@ -161,7 +157,6 @@ const page = () => {
         userInteractionData.clicks.push(click)
     }
     useEffect(() => {
-        const iframe = iframeRef.current;
 
 
 
@@ -200,67 +195,54 @@ const page = () => {
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
         console.log(userInteractionData);
 
-        if (iframe) {
-            const handleMouseMove = (e) => {
-                e.target.style.border = '1px solid red';
-                let pos = { x: e.pageX, y: e.pageY }
-                userInteractionData.positions.push(pos)
-                // console.log(e)
-            };
+        const handleMouseMove = (e) => {
+            let pos = { x: e.pageX, y: e.pageY }
+            userInteractionData.positions.push(pos)
+            // console.log(e)
+        };
 
-            const handleMouseLeave = (e) => {
-                e.target.style.border = '0px';
+        const handleMouseLeave = (e) => {
+            e.target.style.border = '0px';
 
-            };
+        };
 
-            const iframeDocument = iframe.contentDocument;
-            const body = iframeDocument.body;
-
-            // // Check if the div has already been added
-            // // let existingDiv = iframeDocument.getElementById('iframe-overlay');
-            // let existingDiv = document.getElementById('iframe-overlay');
-            // if (!existingDiv) {
-            //     // Create a div and set its size to match the body
-            //     const div = document.createElement('div');
-            //     div.id = 'iframe-overlay';
-            //     div.style.width = document.body.offsetWidth + 'px';
-            //     div.style.height = document.body.offsetHeight + 'px';
-            //     div.style.border = '1px solid blue'; // Optional: Add a border for visibility
-            //     // body.appendChild(div);
-            //     document.body.appendChild(div);
-            //     // existingDiv = iframeDocument.getElementById('iframe-overlay');
-            //     existingDiv = document.getElementById('iframe-overlay');
-            //     const divHeatmap = document.createElement('div');
-            //     divHeatmap.id = 'heatmap';
-            //     divHeatmap.style.position = 'relative'
-            //     divHeatmap.style.width = "100%";
-            //     divHeatmap.style.height = "100%";
-            //     existingDiv.appendChild(divHeatmap);
+        // // Check if the div has already been added
+        // // let existingDiv = iframeDocument.getElementById('iframe-overlay');
+        // let existingDiv = document.getElementById('iframe-overlay');
+        // if (!existingDiv) {
+        //     // Create a div and set its size to match the body
+        //     const div = document.createElement('div');
+        //     div.id = 'iframe-overlay';
+        //     div.style.width = document.body.offsetWidth + 'px';
+        //     div.style.height = document.body.offsetHeight + 'px';
+        //     div.style.border = '1px solid blue'; // Optional: Add a border for visibility
+        //     // body.appendChild(div);
+        //     document.body.appendChild(div);
+        //     // existingDiv = iframeDocument.getElementById('iframe-overlay');
+        //     existingDiv = document.getElementById('iframe-overlay');
+        //     const divHeatmap = document.createElement('div');
+        //     divHeatmap.id = 'heatmap';
+        //     divHeatmap.style.position = 'relative'
+        //     divHeatmap.style.width = "100%";
+        //     divHeatmap.style.height = "100%";
+        //     existingDiv.appendChild(divHeatmap);
 
 
-            // }
-            iframeDocument.addEventListener('mousemove', handleMouseMove);
-            iframeDocument.addEventListener('mouseout', handleMouseLeave);
-            document.addEventListener('mousemove', handleMouseMove);
-            window.addEventListener('beforeunload', handlePageUnload);
-            document.addEventListener('click', handleMouseClick);
-            return () => {
-                iframeDocument.removeEventListener('mousemove', handleMouseMove);
-                iframeDocument.removeEventListener('mouseout', handleMouseLeave);
-                document.removeEventListener('mousemove', handleMouseMove);
-                window.removeEventListener('beforeunload', handlePageUnload);
-                document.removeEventListener('click', handleMouseClick);
-            };
-        }
+        // }
+        document.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('beforeunload', handlePageUnload);
+        document.addEventListener('click', handleMouseClick);
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('beforeunload', handlePageUnload);
+            document.removeEventListener('click', handleMouseClick);
+        };
+
     }, []);
 
     return (
         <main className='w-screen h-screen bg-slate-300'>
-            <div className=' w-screen h-screen rounded-lg overflow-hidden m-2'>
-                <iframe
-                    ref={iframeRef}
-                    src="/pages/home" className='w-full h-full' ></iframe>
-            </div>
+
             <div className=' fixed bottom-4 right-4'>
                 <div onClick={handleReplay} className='bg-red-500 cursor-pointer p-4 w-[200px] mt-4 flex justify-center items-center text-white rounded-lg'>Replay</div>
                 <div onClick={generateHeatmap} className='bg-green-500 cursor-pointer p-4 w-[200px] mt-4 flex justify-center items-center text-white rounded-lg'>Heatmap</div>

@@ -14,9 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className="overflow-hidden bg-white" >
+            <body className=" bg-white" >
 
-                <div className='h-[65px] w-screen px-4 flex items-center bg-white'>
+                <div className='h-[65px]  w-screen px-4 flex items-center bg-white'>
                     <div className='flex gap-4 items-center w-[255px]'>
                         <img src="https://bhuvan.nrsc.gov.in/home/images/bhuvan-logo.png" alt="" className='h-[35px]' />
                         <GiHamburgerMenu className='text-xl' />
@@ -36,8 +36,8 @@ export default function RootLayout({ children }) {
                     </div>
                 </div>
 
-                <main className='flex overflow-x-hidden bg-white'>
-                    <nav className='h-[calc(100vh-64px)]  w-[255px] py-4'>
+                <main className='bg-white'>
+                    {/* <nav className='h-[calc(100vh-64px)] fixed top-[65px] left-0  w-[255px] py-4'>
 
                         <ul className='  w-full text-xl font-light'>
                             <li>
@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
                             <li className='px-4 py-2 cursor-pointer hover:bg-slate-200'>Wiki</li>
                             <li className='px-4 py-2 cursor-pointer hover:bg-slate-200'>Contact</li>
                         </ul>
-                    </nav>
+                    </nav> */}
                     {children}
                 </main>
             </body>

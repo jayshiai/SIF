@@ -9,7 +9,7 @@ const page = () => {
         <>
 
 
-            <div className='bg-[#e8eff9] h-[calc(100vh-64px)] w-[calc(100vw-255px)] p-8 overflow-y-auto overflow-x-hidden'>
+            <div className='bg-[#e8eff9]  w-screen p-8 overflow-x-hidden'>
                 <div className='m-auto w-full  h-fit'>
                     <img src="https://bhuvan.nrsc.gov.in/home/images/BhuvanGenesis2.jpg" alt="" />
                 </div>
@@ -30,41 +30,86 @@ const page = () => {
                     <p className='w-full text-center mt-2'>Collaborative applications - Platform to share your data and create governance applications</p>
                 </div>
                 <div className='flex w-full gap-4 justify-center mt-4'>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
+                    <div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/egov_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div>
+                    <div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/tourism_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div><div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/urban_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div><div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/water_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div>
                 </div>
                 <div className='w-full mt-8'>
                     <h2 className='w-full text-center text-2xl '>Application Sectors</h2>
                     <p className='w-full text-center mt-2'>Collaborative applications - Platform to share your data and create governance applications</p>
                 </div>
                 <div className='flex w-full gap-4 justify-center mt-4'>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[200px] w-[200px] flex justify-center items-center'>Some Text</div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/tmnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/osnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/dsnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/cmnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
                 </div>
+
 
                 <div className='w-full mt-8'>
                     <h2 className='w-full text-center text-2xl '>Maps & OGC Services</h2>
                     <p className='w-full text-center mt-2'>Collaborative applications - Platform to share your data and create governance applications</p>
                 </div>
                 <div className='flex w-full gap-4 justify-center mt-4'>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
+                    <div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/egov_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div>
+                    <div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/tourism_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div><div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/urban_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div><div className='bg-white h-[150px] w-[250px] flex flex-col items-center '>
+                        <img src="https://bhuvan.nrsc.gov.in/home/Icons/water_app.png" className='h-2/3 w-full' alt="" />
+                        <p className='pt-2'>Some text</p>
+                    </div>
                 </div>
                 <div className='w-full mt-8'>
                     <h2 className='w-full text-center text-2xl '>Bhuvan Central Applications    </h2>
                     <p className='w-full text-center mt-2'>Collaborative applications - Platform to share your data and create governance applications</p>
                 </div>
                 <div className='flex w-full gap-4 justify-center mt-4'>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
-                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>Some Text</div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/tmnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/osnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/dsnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
+                    <div className='bg-white h-[100px] w-[200px] flex justify-center items-center'>
+                        <img src="https://bhuvan.nrsc.gov.in/home/images/cmnew.png" className='h-2/3' alt="" />
+                        <p>Awesome</p>
+                    </div>
                 </div>
             </div>
 
